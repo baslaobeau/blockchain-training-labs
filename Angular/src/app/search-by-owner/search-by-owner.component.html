@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Searc cars by owner</h1>
+  <form (ngSubmit)="onSubmit(addForm)" #addForm="ngForm">
+    <div class="form-group">
+      <label for="owner">Owner : </label><input type="text" name="owner" [(ngModel)]='owner'></div>
+    <br/><br/>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+
+<ul>
+<li *ngFor="let car of cars$">
+    <label>Key</label>:{{car.Key}}
+    <label>Make</label>:{{car.Record.make}}
+    <label>Model</label>:{{car.Record.model}}
+    <label>Color</label>:{{car.Record.colour}}
+    <label>Owner</label>:{{car.Record.owner}}
+
+</li>
+
+</ul>
+</div>

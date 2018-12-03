@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Change Car Owner</h1>
+  <form (ngSubmit)="onSubmit(addForm)" #addForm="ngForm">
+    <div class="form-group">
+      <label for="Key">Cars : </label>
+      <select (change) = 'onChange($event)' name="key" [(ngModel)]="key">
+        <option *ngFor="let car of cars$" value= {{car.Key}}>
+          {{car.Key}} - {{car.Record.colour}}
+        </option>
+      </select>
+      <br/><br/>
+      <label for="colour">New Colour : </label><input type="text" name="new_colour" value="GREY" [(ngModel)]='new_colour'>
+    </div>
+    <br/><br/>
+    <button type="submit" class="btn btn-success">Submit</button>
+
+  </form>
+</div>

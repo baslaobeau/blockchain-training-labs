@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Car History</h1>
+  <form (ngSubmit)="onSubmit(addForm)" #addForm="ngForm">
+    <div class="form-group">
+      <label for="car">Car : </label><input type="text" name="car" [(ngModel)]='car'></div>
+    <br/><br/>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+
+<ul>
+<li *ngFor="let history of carHistory$">
+    <label>TIME</label>:{{history.Timestamp}}
+    <label>Make</label>:{{history.Value.make}}
+    <label>Model</label>:{{history.Value.model}}
+    <label>Color</label>:{{history.Value.colour}}
+    <label>Owner</label>:{{history.Value.owner}}
+
+</li>
+
+</ul>
+</div>

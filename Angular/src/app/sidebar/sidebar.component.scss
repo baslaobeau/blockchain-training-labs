@@ -1,0 +1,21 @@
+nav {
+    background: #2D2E2E;
+    height: 100%;
+    width: 100px; 
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0px;
+      li {
+        a {
+          color: #fff;
+          padding: 20px;
+          display: block;
+        }
+        .activated {
+          background-color: #00a8ff;
+        }
+      }
+    }
+  }
+  
