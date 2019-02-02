@@ -1,0 +1,8 @@
+**/node_modules
+**/fabric-samples
+/sample
+
+Angular/package-lock.json
+
+node/hfc-key-store/
+node/package-lock.json
