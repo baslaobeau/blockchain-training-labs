@@ -239,8 +239,7 @@ func (s *SmartContract) changeCarOwner(APIstub shim.ChaincodeStubInterface, args
 }
 
 func (s *SmartContract) changeCarColour(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
-
-
+	return shim.Success(nil)
 }
 
 func (s *SmartContract) getUser(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
