@@ -258,7 +258,7 @@ func (s *SmartContract) getUser(APIstub shim.ChaincodeStubInterface, args []stri
 		buffer.WriteString(", \"MSP\":")
 		buffer.WriteString("\"")
 
-		buffer.WriteString(msp+"_DUMMY_change")
+		buffer.WriteString(msp)
 		buffer.WriteString("\"")
 
 		buffer.WriteString("}")

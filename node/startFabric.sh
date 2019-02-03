@@ -44,6 +44,9 @@ printf "The 'node query.js' may be run at anytime once the user has been registe
 # go get github.com/golang/protobuf/proto
 # go get github.com/hyperledger/fabric/common/attrmgr
 # go get github.com/pkg/errors
+# go get github.com/hyperledger/fabric/core/chaincode/lib/cid
+
+
 
 # cd ~/fabric-samples/chaincode
 # Copy packages from $GOPATH under chaincode.
