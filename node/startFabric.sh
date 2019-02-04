@@ -40,6 +40,15 @@ printf "The 'node query.js' may be run at anytime once the user has been registe
 
 #docker ps
 #docker exec -it {CLI-CONTAINER} bash
+
+# go get github.com/golang/protobuf/proto
+# go get github.com/hyperledger/fabric/common/attrmgr
+# go get github.com/pkg/errors
+
+# cd ~/fabric-samples/chaincode
+# Copy packages from $GOPATH under chaincode.
+
+
 #peer chaincode install -n fabcar -v 1.1 -l "golang" -p "github.com/fabcar/go"
 #peer chaincode upgrade -n fabcar -v 1.1 -o orderer.example.com:7050 -C mychannel -l "golang" -p "github.com/fabcar/go" -c '{"Args":[""]}' -P "OR ('Org1MSP.member','Org2MSP.member')"
 
