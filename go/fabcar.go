@@ -86,7 +86,9 @@ func (s *SmartContract) Invoke(APIstub shim.ChaincodeStubInterface) sc.Response 
 		return s.getHistoryForCar(APIstub, args)
 	} else if function == "getUser" {
 		return s.getUser(APIstub, args)
-} 
+	} else if function == "createCarWithJsonInput" {
+		return s.createCarWithJsonInput(APIstub, args)
+	} 
 
 	return shim.Error("Invalid Smart Contract function name.")
 }
@@ -177,6 +179,23 @@ func (s *SmartContract) createCar(APIstub shim.ChaincodeStubInterface, args []st
 	return shim.Success(nil)
 }
 
+func (s *SmartContract) createCarWithJsonInput(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
+
+	if len(args) != 2 {
+		return shim.Error("Incorrect number of arguments. Expecting 5")
+	}
+	fmt.Println("args[1] > ", args[1])
+	carAsBytes := []byte(args[1])
+	car := Car{}
+	err := json.Unmarshal(carAsBytes, &car)
+
+	if err != nil {
+		return shim.Error("Error During Car Unmarshall")
+	}
+	APIstub.PutState(args[0], carAsBytes)
+	return shim.Success(nil)
+}
+
 func (s *SmartContract) queryAllCars(APIstub shim.ChaincodeStubInterface) sc.Response {
 
 	startKey := "CAR0"
@@ -258,7 +277,7 @@ func (s *SmartContract) getUser(APIstub shim.ChaincodeStubInterface, args []stri
 		buffer.WriteString(", \"MSP\":")
 		buffer.WriteString("\"")
 
-		buffer.WriteString(msp+"_DUMMY_change")
+		buffer.WriteString(msp)
 		buffer.WriteString("\"")
 
 		buffer.WriteString("}")
